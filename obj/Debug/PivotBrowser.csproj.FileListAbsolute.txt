@@ -1,0 +1,15 @@
+c:\users\hfu\documents\visual studio 2010\Projects\PivotBrowser\PivotBrowser\Bin\Debug\ApplicationIcon.png
+c:\users\hfu\documents\visual studio 2010\Projects\PivotBrowser\PivotBrowser\Bin\Debug\Background.png
+c:\users\hfu\documents\visual studio 2010\Projects\PivotBrowser\PivotBrowser\Bin\Debug\PivotBrowser.dll
+c:\users\hfu\documents\visual studio 2010\Projects\PivotBrowser\PivotBrowser\Bin\Debug\PivotBrowser.pdb
+c:\users\hfu\documents\visual studio 2010\Projects\PivotBrowser\PivotBrowser\Bin\Debug\AppManifest.xaml
+c:\users\hfu\documents\visual studio 2010\Projects\PivotBrowser\PivotBrowser\Bin\Debug\PivotBrowser.xap
+c:\users\hfu\documents\visual studio 2010\Projects\PivotBrowser\PivotBrowser\Bin\Debug\Microsoft.Phone.Controls.dll
+c:\users\hfu\documents\visual studio 2010\Projects\PivotBrowser\PivotBrowser\Bin\Debug\Microsoft.Phone.Controls.xml
+c:\users\hfu\documents\visual studio 2010\Projects\PivotBrowser\PivotBrowser\obj\Debug\ResolveAssemblyReference.cache
+c:\users\hfu\documents\visual studio 2010\Projects\PivotBrowser\PivotBrowser\obj\Debug\App.g.i.cs
+c:\users\hfu\documents\visual studio 2010\Projects\PivotBrowser\PivotBrowser\obj\Debug\MainPage.g.i.cs
+c:\users\hfu\documents\visual studio 2010\Projects\PivotBrowser\PivotBrowser\obj\Debug\PivotBrowser.g.resources
+c:\users\hfu\documents\visual studio 2010\Projects\PivotBrowser\PivotBrowser\obj\Debug\PivotBrowser.dll
+c:\users\hfu\documents\visual studio 2010\Projects\PivotBrowser\PivotBrowser\obj\Debug\PivotBrowser.pdb
+c:\users\hfu\documents\visual studio 2010\Projects\PivotBrowser\PivotBrowser\obj\Debug\XapCacheFile.xml
