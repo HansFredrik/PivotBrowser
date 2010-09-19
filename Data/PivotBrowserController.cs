@@ -15,37 +15,37 @@ namespace PivotBrowser.Data
 {
     public class PivotBrowserController
     {
-        public Pivot pivotController { get; set; }
-        private Dictionary<int, PivotBrowser> browserList;
-        private int id = 0;
+        public Pivot PivotController { get; set; }
+        private readonly Dictionary<int, PivotBrowser> _browserList;
+        private int _id = 0;
 
         public PivotBrowserController(Pivot pivotController)
         {
-            this.pivotController = pivotController;
-            browserList = new Dictionary<int, PivotBrowser>();
+            this.PivotController = pivotController;
+            _browserList = new Dictionary<int, PivotBrowser>();
         }
 
         public void AddPivotBrowser()
         {
-            id++;
-            var browser = new Data.PivotBrowser(id);
-            pivotController.Items.Add(browser.PItem);
-            browserList.Add(id, browser);
-            pivotController.SelectedItem = browser.PItem;
+            _id++;
+            var browser = new Data.PivotBrowser(_id);
+            PivotController.Items.Add(browser.PivotItem);
+            _browserList.Add(_id, browser);
+            PivotController.SelectedItem = browser.PivotItem;
         }
 
         public void DelPivotBrowser()
         {
-            pivotController.Items.RemoveAt(pivotController.SelectedIndex);
-            browserList.Remove(pivotController.SelectedIndex);
+            PivotController.Items.RemoveAt(PivotController.SelectedIndex);
+            _browserList.Remove(PivotController.SelectedIndex);
             // TODO: Select last used tab?
         }
 
         private PivotBrowser getSelectedBrowser()
         {
             PivotBrowser browser;
-            int id = Int32.Parse((pivotController.SelectedItem as PivotItem).Name);
-            browserList.TryGetValue(id, out browser);
+            int selectedId = Int32.Parse((PivotController.SelectedItem as PivotItem).Name);
+            _browserList.TryGetValue(selectedId, out browser);
             return browser;
         }
 

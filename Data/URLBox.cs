@@ -26,7 +26,7 @@ namespace PivotBrowser.Data
             Rectangle.Fill = brush;
 
             ListBox = new ListBox();
-            ListBox.Margin = new Thickness(25,65,0,0);
+            ListBox.Margin = new Thickness(25,70,0,0);
             ListBox.Height = 140;
             ListBox.Width = 425;
             ListBox.FontSize = 25;

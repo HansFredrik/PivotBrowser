@@ -8,20 +8,21 @@ namespace PivotBrowser.Data
 {
     public class PivotBrowser
     {
-        public PivotItem PItem { get; set; }
-        public Canvas canvas { get; set; }
+        public PivotItem PivotItem { get; set; }
         private readonly URLBox _urlBox;
         private readonly TextBox _textBox;
         private readonly WebBrowser _browser;
+        private readonly ProgressBar _progressBar;
+
         private bool _textBoxInFocus = false;
 
         public PivotBrowser(int id)
         {
-            PItem = new PivotItem();
-            PItem.Header = "blank";
-            PItem.Name = id.ToString();
+            this.PivotItem = new PivotItem();
+            this.PivotItem.Header = "blank";
+            this.PivotItem.Name = id.ToString();
 
-            canvas = new Canvas();
+            Canvas canvas = new Canvas();
             canvas.Height = 650;
             canvas.Width = 460;
             canvas.Margin = new Thickness(0,-10,0,0);
@@ -42,7 +43,7 @@ namespace PivotBrowser.Data
             _textBox.TextChanged += new System.Windows.Controls.TextChangedEventHandler(_textBox_TextChanged);
             _textBox.LostFocus += new RoutedEventHandler(_textBox_LostFocus);
 
-            var button = new Button();
+            Button button = new Button();
             button.Content = "Go";
             button.Height = 72;
             button.Width = 80;
@@ -61,13 +62,21 @@ namespace PivotBrowser.Data
             _urlBox = new URLBox();
             _urlBox.Hide();
 
+            _progressBar = new ProgressBar();
+            _progressBar.Margin = new Thickness(0,0,0,0);
+            _progressBar.Height = 10;
+            _progressBar.Width = 370;
+            _progressBar.IsIndeterminate = true;
+            _progressBar.Visibility = Visibility.Collapsed;
+
             canvas.Children.Add(_textBox);
             canvas.Children.Add(button);
             canvas.Children.Add(_browser);
             canvas.Children.Add(_urlBox.Rectangle);
             canvas.Children.Add(_urlBox.ListBox);
+            canvas.Children.Add(_progressBar);
 
-            PItem.Content = canvas;
+            this.PivotItem.Content = canvas;
         }
 
         void _textBox_GotFocus(object sender, RoutedEventArgs e)
@@ -92,14 +101,14 @@ namespace PivotBrowser.Data
         void browser_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
         {
             _textBox.Text = e.Uri.ToString();
-
+            _progressBar.Visibility = Visibility.Collapsed;
             try
             {
-                PItem.Header = e.Uri.Host.ToString().Substring(0, 8);
+                PivotItem.Header = e.Uri.Host.ToString().Substring(0, 8);
             }
             catch (Exception)
             {
-                PItem.Header = e.Uri.ToString();
+                PivotItem.Header = e.Uri.ToString();
             }
         }
 
@@ -114,6 +123,9 @@ namespace PivotBrowser.Data
         private void NavigateBrowser(object sender, RoutedEventArgs e)
         {
             _urlBox.Hide();
+            _browser.Focus();
+            _progressBar.Visibility = Visibility.Visible;
+
             string site = _textBox.Text;
             if (!site.StartsWith("http://"))
             {

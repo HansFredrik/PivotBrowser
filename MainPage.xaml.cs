@@ -19,8 +19,7 @@ namespace PivotBrowser
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        //private int _id = 1;
-        private Data.PivotBrowserController pivotBrowserController;
+        private Data.PivotBrowserController _pivotBrowserController;
 
         // Constructor
         public MainPage()
@@ -39,26 +38,26 @@ namespace PivotBrowser
             {
                 App.ViewModel.LoadData();
 
-                pivotBrowserController = new Data.PivotBrowserController(LayoutRoot.Children.First() as Pivot);
-                pivotBrowserController.AddPivotBrowser();
+                _pivotBrowserController = new Data.PivotBrowserController(LayoutRoot.Children.First() as Pivot);
+                _pivotBrowserController.AddPivotBrowser();
             }
         }
 
-        private void addPivotBrowser(object sender, RoutedEventArgs e)
+        private void AddPivotBrowser(object sender, RoutedEventArgs e)
         {
-            pivotBrowserController.AddPivotBrowser();
+            _pivotBrowserController.AddPivotBrowser();
 
-            if (pivotBrowserController.pivotController.Items.Count > 1)
+            if (_pivotBrowserController.PivotController.Items.Count > 1)
             {
                 delBrowserButton.IsEnabled = true;
             }
         }
 
-        private void delPivotBrowser(object sender, RoutedEventArgs e)
+        private void DelPivotBrowser(object sender, RoutedEventArgs e)
         {
-            pivotBrowserController.DelPivotBrowser();
+            _pivotBrowserController.DelPivotBrowser();
 
-            if(pivotBrowserController.pivotController.Items.Count == 1)
+            if (_pivotBrowserController.PivotController.Items.Count == 1)
             {
                 delBrowserButton.IsEnabled = false;
             }

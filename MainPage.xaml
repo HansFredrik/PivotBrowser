@@ -18,16 +18,16 @@
         <!--Pivot Control-->
         <controls:Pivot Margin="0,-18,0,-23" Name="PivotController">
             <!--Pivot item one-->
-            <controls:PivotItem Header="blank">
-                <Canvas Height="650" HorizontalAlignment="Left" Margin="0,-10,0,0" Name="canvas1" VerticalAlignment="Top" Width="460">
-                    <TextBox Height="72" HorizontalAlignment="Left" Margin="0,0,0,0" Name="textBox1" Text="URL" VerticalAlignment="Top" Width="400" />
-                    <Button Canvas.Left="386" Canvas.Top="1" Content="Go" Height="71" Name="button1" Width="80" />
-                    <phone:WebBrowser HorizontalAlignment="Left" Margin="0,72,0,0" Name="webBrowser1" VerticalAlignment="Top" Height="578" Width="460" />
-                </Canvas>
-            </controls:PivotItem>
+<!--            <controls:PivotItem Header="blank">-->
+<!--                <Canvas Height="650" HorizontalAlignment="Left" Margin="0,-10,0,0" Name="canvas1" VerticalAlignment="Top" Width="460">-->
+<!--                    <TextBox Height="72" HorizontalAlignment="Left" Margin="0,0,0,0" Name="textBox1" Text="URL" VerticalAlignment="Top" Width="400" />-->
+<!--                    <Button Canvas.Left="386" Canvas.Top="1" Content="Go" Height="71" Name="button1" Width="80" />-->
+<!--                    <phone:WebBrowser HorizontalAlignment="Left" Margin="0,72,0,0" Name="webBrowser1" VerticalAlignment="Top" Height="578" Width="460" />-->
+<!--                </Canvas>-->
+<!--            </controls:PivotItem>-->
         </controls:Pivot>
         
-        <Button Content="Add" Height="72" HorizontalAlignment="Left" Margin="381,-10,0,0" Name="addBrowserButton" VerticalAlignment="Top" Width="99" Click="addPivotBrowser" />
-        <Button Content="Del" Height="72" HorizontalAlignment="Left" Margin="381,43,0,0" Name="delBrowserButton" VerticalAlignment="Top" Width="99" Click="delPivotBrowser" IsEnabled="False" />
+        <Button Content="Add" Height="72" HorizontalAlignment="Left" Margin="381,-10,0,0" Name="addBrowserButton" VerticalAlignment="Top" Width="99" Click="AddPivotBrowser" />
+        <Button Content="Del" Height="72" HorizontalAlignment="Left" Margin="381,43,0,0" Name="delBrowserButton" VerticalAlignment="Top" Width="99" Click="DelPivotBrowser" IsEnabled="False" />
     </Grid>
 </phone:PhoneApplicationPage>
